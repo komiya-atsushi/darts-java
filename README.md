@@ -11,15 +11,23 @@ MURAWAKI Yugo さんが Java ポーティングしたバージョン (*2) に対
  * (*1) Darts http://www.chasen.org/~taku/software/darts/
  * (*2) http://nlp.ist.i.kyoto-u.ac.jp/member/murawaki/misc/index.html
 
+
 元実装 (Java ポーティング版) からの改善点
 -----------------------------------------
 
  * インタフェースの改善
   * 文字列の char[] 表現や配列の多用を改め、より Java らしいインタフェースで、かつ手軽に利用できるインタフェースとしました。
+ * 入力データによってエラーとなるケースへの対処
  * ヒープ消費量の改善
   * Trie 構築時、および構築後のヒープ消費量が少なくなるようにしました (元実装の約 26% のヒープ消費量)。
  * 実行速度の改善
   * Trie の構築 (約 2.6 倍) や exact match での検索 (約 1.7 倍)、common prefix での検索 (約 1.2 倍) それぞれについて処理性能を向上しました。
+
+
+使い方
+------
+
+DoubleArrayTrie.java を単品でご利用ください(実装はこのファイル一つで完結しています)。
 
 
 Benchmark
@@ -71,3 +79,9 @@ License
 
 LGPL と修正 BSD のデュアルライセンスです。
 各ライセンスの詳細は LGPL ファイル、BSD ファイルをご覧ください。
+
+
+TODO
+----
+
+ * Javadoc を記述する。
